@@ -17,7 +17,7 @@ deploy:
     skip_cleanup: true
     script: node scripts/deploy Production
     on:
-      branch: develop
+      branch: master
 
 
 # Disable "Build pushed pull requests"
