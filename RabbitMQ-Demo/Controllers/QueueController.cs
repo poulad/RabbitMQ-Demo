@@ -21,7 +21,7 @@ namespace Demo.Controllers
             return View();
         }
 
-        public IActionResult Publish()
+        public IActionResult Push()
         {
             var msg = new Visit(HttpContext.Connection.RemoteIpAddress.ToString());
             _qService.Publish(msg);
@@ -31,7 +31,7 @@ namespace Demo.Controllers
             return View();
         }
 
-        public IActionResult Dequeue()
+        public IActionResult Pop()
         {
             var msg = _qService.Dequeue<Visit>();
 

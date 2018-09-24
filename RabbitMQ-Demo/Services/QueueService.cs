@@ -69,6 +69,7 @@ namespace Demo.Services
                     arguments: null
                 );
 
+                var consumer2 = new AsyncDefaultBasicConsumer(channel);
                 var consumer = new QueueingBasicConsumer(channel);
 
                 channel.BasicConsume(
