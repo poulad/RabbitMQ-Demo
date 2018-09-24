@@ -6,6 +6,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.App"/>
+        <PackageReference Include="RabbitMQ.Client" Version="5.1.0"/>
     </ItemGroup>
 
 </Project>
