@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Demo.Options;
+using Demo.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +19,9 @@ namespace Demo
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<RabbitMqOptions>(Configuration.GetSection("RabbitMQ"));
+            services.AddScoped<IQueueService, QueueService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -32,7 +37,7 @@ namespace Demo
             }
 
             app.UseStaticFiles();
-            
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

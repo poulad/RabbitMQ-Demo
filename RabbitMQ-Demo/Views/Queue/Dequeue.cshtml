@@ -1,0 +1,16 @@
+﻿@{ ViewData["Title"] = "Dequeue"; }
+@if (ViewData["visitor"] == null)
+{
+    <h4>Queue is empty!</h4>
+}
+else
+{
+    <dl>
+        <dt>Visitor:</dt>
+        <dd>@ViewData["visitor"]</dd>
+    </dl>
+    <dl>
+        <dt>Visited At:</dt>
+        <dd>@ViewData["visit_time"]</dd>
+    </dl>
+}

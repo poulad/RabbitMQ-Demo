@@ -1,0 +1,13 @@
+﻿@{ ViewData["Title"] = "Queue Status"; }
+
+<h2>Queue: @ViewData["queue"]</h2>
+<h3>There are @ViewData["count"] messages in the queue.</h3>
+
+<ul>
+    <li>
+        <a asp-area="" asp-controller="Queue" asp-action="Publish">Publish a new message</a>
+    </li>
+    <li>
+        <a asp-area="" asp-controller="Queue" asp-action="Dequeue">Dequeue a message</a>
+    </li>
+</ul>
