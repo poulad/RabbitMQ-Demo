@@ -16,7 +16,6 @@ namespace Demo.Controllers
         public IActionResult Index()
         {
             ViewData["queue"] = "Demo";
-            ViewData["count"] = 3;
 
             return View();
         }
